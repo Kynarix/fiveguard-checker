@@ -1,0 +1,9 @@
+cloudscraper>=1.2.71
+requests>=2.31.0
+colorama>=0.4.6
+beautifulsoup4
+lxml
+requests
+colorama
+cloudscraper
+rich

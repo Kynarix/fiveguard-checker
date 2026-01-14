@@ -129,7 +129,6 @@ class FiveGuardChecker:
 
     def _init_json(self):
         with self.lock:
-            # Sadece varlığı değil, içindeki veriyi de garanti alalım amk
             if not os.path.exists(self.json_file) or os.path.getsize(self.json_file) == 0:
                 with open(self.json_file, "w") as f:
                     json.dump([], f)
@@ -203,7 +202,6 @@ class FiveGuardChecker:
                     except:
                         pass
                     
-                    # Geniş kontrol - done, success, redirect veya JSON'da success:true
                     is_valid = (
                         "done" in resp_text or 
                         resp_json.get("success") == True or 
@@ -323,7 +321,6 @@ class FiveGuardChecker:
                 # "Active Subscriptions" başlığını bul ve ona en yakın tabloyu çek
                 sub_tables = tree.xpath("//h4[contains(text(), 'Active Subscriptions')]/following::table[1]//tr")
                 if not sub_tables:
-                    # Alternatif: class veya id ile bul
                     sub_tables = tree.xpath("//table[contains(@class, 'subscription') or contains(@id, 'subscription')]//tr[td]")
                 if not sub_tables:
                     # Son çare: Tüm tabloları kontrol et ve Active Subscriptions olanı bul
@@ -365,7 +362,7 @@ class FiveGuardChecker:
                         with open(self.json_file, "r") as f:
                             data = json.load(f)
                     except json.JSONDecodeError:
-                        data = [] # Bozuk dosyayı sıfırla amk
+                        data = []
 
                 data.append({
                     "email": email,

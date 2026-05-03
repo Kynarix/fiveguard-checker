@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 FiveGuard Account Checker [ULTRATHINK EDITION]
-Kynarix Production - Twixx Exclusive
+PheXorA Production
 """
 
 from datetime import datetime
@@ -41,7 +41,7 @@ GREEN_BOLD = "bold #4CAF50"
 YELLOW_BOLD = "bold #FF9800"
 CYAN_BOLD = "bold #2196F3"
 
-ctypes.windll.kernel32.SetConsoleTitleW("FiveGuard Checker & By Kynarix")
+ctypes.windll.kernel32.SetConsoleTitleW("FiveGuard Checker & By PheXorA")
 
 class DisplayManager:
     def __init__(self, checker):
@@ -84,7 +84,7 @@ class DisplayManager:
             Panel(
                 Align.center(
                     Columns([
-                        Align.center(Text(f"\nFIVEGUARD CHECKER v1.1 - KYNARIX\n", style=RED_BOLD)),
+                        Align.center(Text(f"\nFIVEGUARD CHECKER v1.2 - PHEXORA\n", style=RED_BOLD)),
                         Align.center(prog),
                         Align.center(Text(f"{percent:.2f}%\n", style=WHITE_BOLD)),
                         Align.center(table),
@@ -170,7 +170,12 @@ class FiveGuardChecker:
 
     def check_account(self, email, password):
         if self.stop_event.is_set(): return
-        scraper = self._get_scraper()
+        try:
+            scraper = self._get_scraper()
+        except Exception as e:
+            self._update_stats("Error")
+            self._log("ERROR", email, f"Scraper init failed: {str(e)}")
+            return
         data = {
             "email": email,
             "pass": password,
@@ -372,7 +377,7 @@ class FiveGuardChecker:
                     "account_type": cap_data["account_type"],
                     "owned_products": cap_data["owned_products"],
                     "active_subscriptions": cap_data["active_subscriptions"],
-                    "checker": "Kynarix"
+                    "checker": "PheXorA"
                 })
                 
                 with open(self.json_file, "w") as f:
@@ -402,7 +407,7 @@ class FiveGuardChecker:
     def _load_accounts(self):
         if not os.path.exists(ACCOUNTS_FILE):
             return []
-        with open(ACCOUNTS_FILE, "r") as f:
+        with open(ACCOUNTS_FILE, "r", encoding="utf-8") as f:
             return [line.strip() for line in f if ":" in line]
 
     def run(self):

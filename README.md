@@ -1,6 +1,6 @@
 <div align="center">
 
-  <h1>🔒 FiveGuard Account Checker</h1>
+  <h1>  FiveGuard Account Checker</h1>
   <p><strong>High-performance, multi-threaded account validation suite for FiveGuard services.</strong></p>
 
   <img src="https://img.shields.io/badge/Version-1.2-ff1744?style=for-the-badge&logo=semver&logoColor=white" alt="Version">
@@ -23,21 +23,7 @@
 
 ---
 
-## ✨ Features
-
-| Feature | Description |
-|---------|-------------|
-| ⚡ **Multi-Threaded Engine** | Concurrent validation with 5 configurable worker threads |
-| 📊 **Real-Time Dashboard** | Live Rich-powered terminal UI with progress tracking |
-| 💰 **Auto Data Capture** | Extracts balance, owned products & active subscriptions |
-| 🛡️ **Cloudflare Bypass** | Seamless anti-bot protection handling via cloudscraper |
-| 📁 **Structured JSON Output** | Machine-readable results exported to `results/valid.json` |
-| 🔄 **Auto-Retry Logic** | Intelligent retry mechanism for rate limits & server errors |
-| 🎨 **Colored Logging** | Context-aware color-coded status indicators |
-
----
-
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 - [Python 3.8+](https://www.python.org/downloads/)
@@ -122,7 +108,7 @@ Sample `valid.json` output:
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 fiveguard-checker/
@@ -135,23 +121,8 @@ fiveguard-checker/
 └── 📁 .git/               # Git metadata
 ```
 
----
 
-## 🛠️ Tech Stack
-
-| Technology | Purpose |
-|------------|---------|
-| **Python 3.8+** | Core runtime |
-| **cloudscraper** | Cloudflare & anti-bot bypass |
-| **requests** | HTTP session management |
-| **Rich** | Terminal dashboard & UI rendering |
-| **lxml** | HTML parsing & XPath extraction |
-| **colorama** | Cross-platform ANSI color support |
-| **concurrent.futures** | Multi-threaded execution |
-
----
-
-## 📜 Changelog
+## Changelog
 
 ### v1.2
 - 🔁 Enhanced error handling for scraper initialization
@@ -165,20 +136,7 @@ fiveguard-checker/
 
 ---
 
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!  
-Feel free to check the [issues page](https://github.com/Kynarix/fiveguard-checker/issues).
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
----
-
-## 📄 License
+## License
 
 This project is licensed under the **MIT License**.  
 See the repository for full license details.

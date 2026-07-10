@@ -101,7 +101,7 @@ Sample `valid.json` output:
         "expires_on": "2026-05-18"
       }
     ],
-    "checker": "PheXorA"
+    "checker": "Twixx"
   }
 ]
 ```
@@ -126,7 +126,7 @@ fiveguard-checker/
 
 ### v1.2
 - 🔁 Enhanced error handling for scraper initialization
-- 🏷️ Rebranded checker identity to **PheXorA**
+- 🏷️ Rebranded checker identity to **Twixx**
 - 🐛 Fixed encoding issues on Windows (`UTF-8` support)
 
 ### v1.1
@@ -145,7 +145,7 @@ See the repository for full license details.
 
 <div align="center">
 
-  <p><strong>Crafted by <a href="https://github.com/Kynarix">PheXorA</a></strong></p>
+  <p><strong>Crafted by <a href="https://github.com/Kynarix">Twixx</a></strong></p>
   <p>
     <a href="https://github.com/Kynarix/fiveguard-checker">⭐ Star this repo</a> •
     <a href="https://github.com/Kynarix/fiveguard-checker/issues">🐛 Report Bug</a>
